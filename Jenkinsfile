@@ -37,10 +37,10 @@ pipeline {
         sh "docker pull darshhd/simple-node-app"
       }
     }
-    stage('Running the app') {
-      steps{
-        sh "node app.js"
-      }
-    }
+//    stage('Running the app') {
+//      steps{
+//        sh "node app.js"
+//      }
+//    }
   }
 }
