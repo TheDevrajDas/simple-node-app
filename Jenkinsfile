@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Pulling from dockerhub') {
       steps{
-        sh "docker run -d -p 8000:8000 $registry:$BUILD_NUMBER"
+        sh "docker run -d -p 8000:8000 ${dockerImage.imageName()}"
       }
     }
 //    stage('Running the app') {
