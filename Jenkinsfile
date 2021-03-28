@@ -2,7 +2,7 @@ pipeline {
   environment {
     registry = "darshhd/simple-node-app"
     registryCredential = 'docker-hub'
-    dockerImage = 'simple-node-app'
+    dockerImage = ''
   }
   agent any
   stages {
@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build("darshhd/simple-node-app")
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
