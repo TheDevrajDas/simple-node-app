@@ -29,12 +29,12 @@ pipeline {
    }
     stage('Remove Unused docker image') {
       steps{
-        sh "docker rmi darshhd/simple-node-app"
+        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
     stage('Pulling from dockerhub') {
       steps{
-        sh "docker pull darshhd/simple-node-app"
+        sh "docker run -d -p 8000:8000 $registry:$BUILD_NUMBER"
       }
     }
 //    stage('Running the app') {
