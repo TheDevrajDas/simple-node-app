@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "darshhd/simple-node-app"
+    registry = "theDevrajDas/simple-node-app"
     registryCredential = 'docker-hub'
     dockerImage = ''
   }
@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/darshhd/simple-node-app.git'
+        git 'https://github.com/TheDevrajDas/simple-node-app.git'
       }
     }
     stage('Building image') {
